@@ -18,8 +18,8 @@ if (hasProperty("SonatypeUsername")) {
             sonatype {
                 nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
                 snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-                username.set(property("SonatypeUsername").toString())
-                password.set(property("SonatypePassword").toString())
+                username.set(System.getenv("SonatypeUsername"))
+                password.set(System.getenv("SonatypePassword"))
             }
         }
     }
@@ -59,6 +59,12 @@ publishing {
 }
 
 signing {
+    isRequired = System.getenv("CI") != null
+
+    val privateKey = System.getenv("GPG_PRIVATE_KEY")
+    val keyPassphrase = System.getenv("GPG_PASSPHRASE")
+    useInMemoryPgpKeys(privateKey, keyPassphrase)
+
     sign(publishing.publications["mavenJava"])
 }
 
