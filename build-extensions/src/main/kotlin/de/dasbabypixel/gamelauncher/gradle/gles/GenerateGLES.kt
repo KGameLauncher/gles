@@ -1,5 +1,7 @@
 package de.dasbabypixel.gamelauncher.gradle.gles
 
+import de.dasbabypixel.gamelauncher.gradle.gles.Generator.Companion.headerUrl
+import de.dasbabypixel.gamelauncher.gradle.gles.Generator.Companion.readUrl
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.tasks.Input
@@ -37,11 +39,14 @@ abstract class GenerateGLES : DefaultTask() {
                 }
             }
 
+            val headers = readHeader()
+
             val byVersion = generator.mapByGLESVersion(read)
             byVersion.forEach { (version, functions) ->
+                val map = headers[version]!!
                 service.submit {
                     try {
-                        generator.writeMainInterface(version, functions)
+                        generator.writeMainInterface(version, functions, map)
                     } catch (t: Throwable) {
                         t.printStackTrace()
                     }
@@ -49,5 +54,11 @@ abstract class GenerateGLES : DefaultTask() {
             }
         }
         generator.finish()
+    }
+
+    private fun readHeader(): Map<Generator.GLESVersion, Map<String, String>> {
+        val reader = HeaderReader(headerUrl.readUrl())
+        reader.read()
+        return reader.definitionsByVersion
     }
 }

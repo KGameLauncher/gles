@@ -20,8 +20,13 @@ import kotlin.io.path.createDirectories
 class Generator(targetPath: Path, private val packageName: String) {
     companion object {
         const val baseUrl = "https://registry.khronos.org/OpenGL-Refpages/es3/"
+        const val headerUrl = "https://registry.khronos.org/OpenGL/api/GLES3/gl32.h"
         const val supported = "\u2714"
         const val unsupported = "-"
+
+        fun String.readUrl(): String {
+            return URI(this).toURL().readText()
+        }
     }
 
     private val kotlin = Serializer.Kotlin(this)
@@ -35,7 +40,7 @@ class Generator(targetPath: Path, private val packageName: String) {
         }
     }
 
-    fun writeDebugProc() {
+    private fun writeDebugProc() {
         val page = DocPage("DebugProc", listOf(), "")
         val function = GLFunction(
             GLESVersion.ES32, Definition(
@@ -82,7 +87,7 @@ class Generator(targetPath: Path, private val packageName: String) {
         }
     }
 
-    fun writeMainInterface(version: GLESVersion, functions: List<GLFunction>) {
+    fun writeMainInterface(version: GLESVersion, functions: List<GLFunction>, headerDefines: Map<String, String>) {
         val name = "GL" + version.name
         val path = basePath.resolve("$name.kt")
         path.parent.createDirectories()
@@ -90,17 +95,27 @@ class Generator(targetPath: Path, private val packageName: String) {
         if (version.ordinal > 0) {
             extend.add("GL" + GLESVersion.values()[version.ordinal - 1].name)
         }
-        extend.addAll(functions.map { it.name })
+        extend.addAll(functions.map { it.name }.sorted())
         path.bufferedWriter().use {
             it.write(
                 """
                 package $packageName%s
                 
-                interface $name%s
+                interface $name%s%s
             """.trimIndent().format(
                     if (functions.isEmpty()) "" else "\n\nimport $packageName.${version.versionName}.*",
                     if (functions.isEmpty()) "" else " :\n" + extend.joinToString(separator = ",\n")
-                        .prependIndent("    ")
+                        .prependIndent("    "), if (headerDefines.isEmpty()) "" else {
+                        " {\n" + """
+                            companion object {
+                            %s
+                            }
+                        """.trimIndent().format(
+                            headerDefines.entries.joinToString(separator = "\n") { e ->
+                                "const val ${e.key} = ${e.value}"
+                            }.prependIndent("    ")
+                        ).prependIndent("    ") + "\n}"
+                    }
                 )
             )
         }
@@ -217,12 +232,14 @@ class Generator(targetPath: Path, private val packageName: String) {
         return ReadResult(read.functions.map { it.copy(page = pageMap[it.page]!!) }, pageMap.values.toList())
     }
 
-    private fun String.readUrl(): String {
-        return URI(this).toURL().readText()
-    }
+    enum class GLESVersion(val versionName: String, val header: String) {
+        ES20("es20", "GLES2/gl2.h"),
 
-    enum class GLESVersion(val versionName: String) {
-        ES20("es20"), ES30("es30"), ES31("es31"), ES32("es32");
+        ES30("es30", "GLES3/gl3.h"),
+
+        ES31("es31", "GLES3/gl31.h"),
+
+        ES32("es32", "GLES3/gl32.h");
     }
 
     fun readVersion(): ReadResult {
