@@ -91,7 +91,7 @@ tasks.register<GenerateGLES>("generate") {
     directory.set(file("src/main/kotlin"))
 }
 
-tasks.jreleaserConfig.configure {
+tasks.jreleaserFullRelease.configure {
     dependsOn(tasks.publish)
 }
 
