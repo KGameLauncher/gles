@@ -16,4 +16,4 @@ jobs:
       - name: Build and Publish
         run: ./gradlew -PSonatypeUsername="${{ secrets.SONATYPE_USERNAME }}" -PSonatypePassword="${{ secrets.SONATYPE_PASSWORD }}" publishToSonatype closeAndReleaseSonatypeStagingRepository
 
-on: []
+on: [ workflow_dispatch ]
