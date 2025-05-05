@@ -1,6 +1,7 @@
 package de.dasbabypixel.gamelauncher.gradle.gles
 
 import org.gradle.api.DefaultTask
+import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
@@ -11,7 +12,7 @@ import kotlin.io.path.deleteRecursively
 
 abstract class GenerateGLES : DefaultTask() {
     @OutputDirectory
-    val directory = project.objects.directoryProperty()!!
+    val directory: DirectoryProperty = project.objects.directoryProperty()
 
     @Input
     val packageName = project.objects.property<String>()

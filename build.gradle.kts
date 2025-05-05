@@ -1,31 +1,54 @@
 import de.dasbabypixel.gamelauncher.gradle.gles.GenerateGLES
+import org.jreleaser.model.Active
+import org.jreleaser.model.Signing.Mode
+import org.jreleaser.model.api.deploy.maven.MavenCentralMavenDeployer
+import org.jreleaser.model.api.signing.Signing
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
     id("gles")
     `maven-publish`
-    signing
-    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
+    id("org.jreleaser") version "1.18.0"
 }
 
 repositories {
     mavenCentral()
 }
 
-if (System.getenv("SONATYPE_USERNAME") != null) {
-    nexusPublishing {
-        repositories {
-            sonatype {
-                nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-                snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-                username.set(System.getenv("SONATYPE_USERNAME"))
-                password.set(System.getenv("SONATYPE_PASSWORD"))
+jreleaser {
+    signing {
+        active = Active.ALWAYS
+        mode = Mode.MEMORY
+        verify = false
+        passphrase = System.getenv("GPG_PASSPHRASE")
+        secretKey = System.getenv("GPG_PRIVATE_KEY")
+        armored = true
+    }
+    deploy {
+        maven {
+            mavenCentral {
+                register("sonatype") {
+                    maxRetries = 1
+                    active = Active.ALWAYS
+                    url = "https://central.sonatype.com/api/v1/publisher"
+                    stagingRepository("build/staging-deploy")
+
+                    if (System.getenv("SONATYPE_USERNAME") != null) {
+                        username = System.getenv("SONATYPE_USERNAME")
+                        password = System.getenv("SONATYPE_PASSWORD")
+                    }
+                }
             }
         }
     }
 }
 
 publishing {
+    repositories {
+        maven {
+            url = layout.buildDirectory.dir("staging-deploy").get().asFile.toURI()
+        }
+    }
     publications {
         register<MavenPublication>("mavenJava") {
             from(components["java"])
@@ -51,21 +74,11 @@ publishing {
                 scm {
                     connection.set("scm:git:git://github.com/KGameLauncher/gles.git")
                     developerConnection.set("scm:git:ssh://github.com/KGameLauncher/gles.git")
-                    url.set("https://github.com/KGameLauncher/glesscm:git:git://github.com/KGameLauncher/gles.git")
+                    url.set("https://github.com/KGameLauncher/gless")
                 }
             }
         }
     }
-}
-
-signing {
-    isRequired = System.getenv("CI") != null
-
-    val privateKey = System.getenv("GPG_PRIVATE_KEY")
-    val keyPassphrase = System.getenv("GPG_PASSPHRASE")
-    useInMemoryPgpKeys(privateKey, keyPassphrase)
-
-    sign(publishing.publications["mavenJava"])
 }
 
 java {
@@ -76,4 +89,12 @@ java {
 tasks.register<GenerateGLES>("generate") {
     packageName = "de.dasbabypixel.gamelauncher.gles"
     directory.set(file("src/main/kotlin"))
+}
+
+tasks.jreleaserConfig.configure {
+    dependsOn(tasks.publish)
+}
+
+tasks.publish.configure {
+    dependsOn(tasks.clean)
 }
