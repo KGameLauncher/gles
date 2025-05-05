@@ -28,7 +28,6 @@ jreleaser {
         maven {
             mavenCentral {
                 register("sonatype") {
-                    maxRetries = 1
                     active = Active.ALWAYS
                     url = "https://central.sonatype.com/api/v1/publisher"
                     stagingRepository("build/staging-deploy")
