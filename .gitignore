@@ -8,3 +8,4 @@
 !/build-extensions
 !/src
 !/.github
+!/gradle.properties
