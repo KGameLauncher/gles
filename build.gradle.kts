@@ -92,6 +92,7 @@ tasks.register<GenerateGLES>("generate") {
 }
 
 tasks.jreleaserFullRelease.configure {
+    dependsOn(tasks.clean)
     dependsOn(tasks.publish)
 }
 
