@@ -38,51 +38,6 @@ class Generator(targetPath: Path, private val packageName: String) {
         if (requireDebugProc) {
             writeDebugProc()
         }
-        writePointerBuffer()
-    }
-
-    private fun writePointerBuffer() {
-        val path = basePath.resolve("PointerBuffer.kt");
-        path.parent.createDirectories()
-        path.bufferedWriter().use {
-            it.write("""
-                package $packageName
-                
-                interface PointerBuffer {
-                    val size: UInt
-                    val position: UInt
-                    val remaining: UInt
-                    
-                    fun get(): Long
-                    fun get(index: UInt): Long
-                    
-                    fun put(p: Long): PointerBuffer
-                    fun put(index: UInt, p: Long): PointerBuffer
-                    
-                    fun getByteBuffer(index: UInt, capacity: UInt): java.nio.ByteBuffer
-                    fun getShortBuffer(index: UInt, capacity: UInt): java.nio.ShortBuffer
-                    fun getIntBuffer(index: UInt, capacity: UInt): java.nio.IntBuffer
-                    fun getLongBuffer(index: UInt, capacity: UInt): java.nio.LongBuffer
-                    fun getFloatBuffer(index: UInt, capacity: UInt): java.nio.FloatBuffer
-                    fun getDoubleBuffer(index: UInt, capacity: UInt): java.nio.DoubleBuffer
-                    fun getPointerBuffer(index: UInt, capacity: UInt): PointerBuffer
-                    
-                    fun getByteBuffer(capacity: UInt): java.nio.ByteBuffer
-                    fun getShortBuffer(capacity: UInt): java.nio.ShortBuffer
-                    fun getIntBuffer(capacity: UInt): java.nio.IntBuffer
-                    fun getLongBuffer(capacity: UInt): java.nio.LongBuffer
-                    fun getFloatBuffer(capacity: UInt): java.nio.FloatBuffer
-                    fun getDoubleBuffer(capacity: UInt): java.nio.DoubleBuffer
-                    fun getPointerBuffer(capacity: UInt): PointerBuffer
-                    
-                    fun put(index: UInt, buffer: java.nio.Buffer): PointerBuffer
-                    fun put(index: UInt, buffer: PointerBuffer): PointerBuffer
-                    
-                    fun put(buffer: java.nio.Buffer)
-                    fun put(buffer: PointerBuffer)
-                }
-            """.trimIndent())
-        }
     }
 
     private fun writeDebugProc() {
@@ -106,7 +61,6 @@ class Generator(targetPath: Path, private val packageName: String) {
         val name = function.name
         val signature = function.signature(kotlin)
         val path = basePath.resolve(function.glVersion.versionName).resolve("$name.kt")
-//        println("Write to $path")
         path.parent.createDirectories()
         path.bufferedWriter().use {
             it.write(
@@ -528,7 +482,7 @@ class Generator(targetPath: Path, private val packageName: String) {
                     StringArray -> "Array<String>"
                     FloatBuffer -> "de.dasbabypixel.gamelauncher.buffers.FloatBuffer"
                     Buffer -> "de.dasbabypixel.gamelauncher.buffers.Buffer"
-                    PointerBuffer -> "${generator.packageName}.PointerBuffer"
+                    PointerBuffer -> "de.dasbabypixel.gamelauncher.buffers.PointerBuffer"
                     IntBufferRO -> "de.dasbabypixel.gamelauncher.buffers.IntBufferRO"
                     FloatBufferRO -> "de.dasbabypixel.gamelauncher.buffers.FloatBufferRO"
                     BufferRO -> "de.dasbabypixel.gamelauncher.buffers.BufferRO"

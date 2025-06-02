@@ -93,5 +93,5 @@ interface glGetBufferPointerv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetBufferPointerv.glGetBufferPointerv
     */
-    fun glGetBufferPointerv(target: Int, pname: Int, params: de.dasbabypixel.gamelauncher.gles.PointerBuffer)
+    fun glGetBufferPointerv(target: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.PointerBuffer)
 }
