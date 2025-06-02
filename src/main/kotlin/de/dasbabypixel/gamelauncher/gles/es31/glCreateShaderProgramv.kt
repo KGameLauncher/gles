@@ -91,5 +91,5 @@ interface glCreateShaderProgramv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glCreateShaderProgramv.glCreateShaderProgramv
     */
-    fun glCreateShaderProgramv(type: Int, count: UInt, strings: Array<String>): UInt
+    fun glCreateShaderProgramv(type: Int, count: UInt, strings: de.dasbabypixel.gamelauncher.buffers.PointerBuffer): UInt
 }

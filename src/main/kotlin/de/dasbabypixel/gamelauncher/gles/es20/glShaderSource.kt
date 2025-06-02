@@ -84,5 +84,5 @@ interface glShaderSource {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glShaderSource.glShaderSource
     */
-    fun glShaderSource(shader: UInt, count: UInt, string: Array<String>, length: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
+    fun glShaderSource(shader: UInt, count: UInt, string: de.dasbabypixel.gamelauncher.buffers.PointerBuffer, length: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

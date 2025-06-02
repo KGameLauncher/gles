@@ -382,11 +382,11 @@ class Generator(targetPath: Path, private val packageName: String) {
 
             "char *" -> ByteBuffer
             "const char *" -> OurType.String
-            "const char **" -> StringArray
+            "const char **" -> PointerBuffer
 
             "GLchar *" -> ByteBuffer
             "const GLchar *" -> OurType.String
-            "const GLchar **" -> StringArray
+            "const GLchar **" -> PointerBuffer
 
             "const GLubyte*" -> OurType.String
 
@@ -439,7 +439,6 @@ class Generator(targetPath: Path, private val packageName: String) {
         IntBuffer,
         IntBufferRO,
         LongBuffer,
-        StringArray,
         FloatBuffer,
         FloatBufferRO,
         Buffer,
@@ -479,7 +478,6 @@ class Generator(targetPath: Path, private val packageName: String) {
                     ByteBuffer -> "de.dasbabypixel.gamelauncher.buffers.ByteBuffer"
                     IntBuffer -> "de.dasbabypixel.gamelauncher.buffers.IntBuffer"
                     LongBuffer -> "de.dasbabypixel.gamelauncher.buffers.LongBuffer"
-                    StringArray -> "Array<String>"
                     FloatBuffer -> "de.dasbabypixel.gamelauncher.buffers.FloatBuffer"
                     Buffer -> "de.dasbabypixel.gamelauncher.buffers.Buffer"
                     PointerBuffer -> "de.dasbabypixel.gamelauncher.buffers.PointerBuffer"

@@ -88,5 +88,5 @@ interface glTransformFeedbackVaryings {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glTransformFeedbackVaryings.glTransformFeedbackVaryings
     */
-    fun glTransformFeedbackVaryings(program: UInt, count: UInt, varyings: Array<String>, bufferMode: Int)
+    fun glTransformFeedbackVaryings(program: UInt, count: UInt, varyings: de.dasbabypixel.gamelauncher.buffers.PointerBuffer, bufferMode: Int)
 }
