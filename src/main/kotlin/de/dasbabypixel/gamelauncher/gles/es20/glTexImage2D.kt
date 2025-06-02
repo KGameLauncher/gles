@@ -291,5 +291,5 @@ interface glTexImage2D {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glTexImage2D.glTexImage2D
     */
-    fun glTexImage2D(target: Int, level: Int, internalFormat: Int, width: UInt, height: UInt, border: Int, format: Int, type: Int, data: Long)
+    fun glTexImage2D(target: Int, level: Int, internalFormat: Int, width: UInt, height: UInt, border: Int, format: Int, type: Int, data: java.nio.Buffer)
 }

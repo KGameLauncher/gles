@@ -87,5 +87,5 @@ interface glDrawElements {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glDrawElements.glDrawElements
     */
-    fun glDrawElements(mode: Int, count: UInt, type: Int, indices: Long)
+    fun glDrawElements(mode: Int, count: UInt, type: Int, indices: java.nio.Buffer)
 }

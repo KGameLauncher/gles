@@ -157,5 +157,5 @@ interface glCompressedTexImage2D {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glCompressedTexImage2D.glCompressedTexImage2D
     */
-    fun glCompressedTexImage2D(target: Int, level: Int, internalformat: Int, width: UInt, height: UInt, border: Int, imageSize: UInt, data: Long)
+    fun glCompressedTexImage2D(target: Int, level: Int, internalformat: Int, width: UInt, height: UInt, border: Int, imageSize: UInt, data: java.nio.Buffer)
 }

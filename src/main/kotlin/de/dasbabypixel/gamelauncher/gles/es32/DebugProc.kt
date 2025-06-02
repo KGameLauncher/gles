@@ -6,5 +6,5 @@ interface DebugProc {
     * 
     * 
     */
-    fun DebugProc(type: Int, id: UInt, severity: Int, length: UInt, message: String, userParam: Long)
+    fun DebugProc(type: Int, id: UInt, severity: Int, length: UInt, message: String, userParam: java.nio.Buffer)
 }

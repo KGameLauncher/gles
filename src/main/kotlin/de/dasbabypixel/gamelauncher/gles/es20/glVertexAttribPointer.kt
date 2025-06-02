@@ -133,5 +133,5 @@ interface glVertexAttribPointer {
     * @see de.dasbabypixel.gamelauncher.gles.es20.glVertexAttribPointer.glVertexAttribPointer
     * @see de.dasbabypixel.gamelauncher.gles.es30.glVertexAttribIPointer.glVertexAttribIPointer
     */
-    fun glVertexAttribPointer(index: UInt, size: Int, type: Int, normalized: Boolean, stride: UInt, pointer: Long)
+    fun glVertexAttribPointer(index: UInt, size: Int, type: Int, normalized: Boolean, stride: UInt, pointer: java.nio.Buffer)
 }

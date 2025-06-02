@@ -166,5 +166,5 @@ interface glCompressedTexImage3D {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glCompressedTexImage3D.glCompressedTexImage3D
     */
-    fun glCompressedTexImage3D(target: Int, level: Int, internalformat: Int, width: UInt, height: UInt, depth: UInt, border: Int, imageSize: UInt, data: Long)
+    fun glCompressedTexImage3D(target: Int, level: Int, internalformat: Int, width: UInt, height: UInt, depth: UInt, border: Int, imageSize: UInt, data: java.nio.Buffer)
 }

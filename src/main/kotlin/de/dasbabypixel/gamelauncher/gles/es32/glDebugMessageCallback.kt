@@ -68,5 +68,5 @@ interface glDebugMessageCallback {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glDebugMessageCallback.glDebugMessageCallback
     */
-    fun glDebugMessageCallback(callback: DebugProc, userParam: Long)
+    fun glDebugMessageCallback(callback: DebugProc, userParam: java.nio.Buffer)
 }

@@ -104,5 +104,5 @@ interface glBufferSubData {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glBufferSubData.glBufferSubData
     */
-    fun glBufferSubData(target: Int, offset: Long, size: ULong, data: Long)
+    fun glBufferSubData(target: Int, offset: Long, size: ULong, data: java.nio.Buffer)
 }

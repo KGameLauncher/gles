@@ -137,5 +137,5 @@ interface glBufferData {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glBufferData.glBufferData
     */
-    fun glBufferData(target: Int, size: ULong, data: Long, usage: Int)
+    fun glBufferData(target: Int, size: ULong, data: java.nio.Buffer, usage: Int)
 }

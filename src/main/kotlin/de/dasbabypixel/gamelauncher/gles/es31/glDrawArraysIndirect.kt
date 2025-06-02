@@ -85,5 +85,5 @@ interface glDrawArraysIndirect {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glDrawArraysIndirect.glDrawArraysIndirect
     */
-    fun glDrawArraysIndirect(mode: Int, indirect: Long)
+    fun glDrawArraysIndirect(mode: Int, indirect: java.nio.Buffer)
 }

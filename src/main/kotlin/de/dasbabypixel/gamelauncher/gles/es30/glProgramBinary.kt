@@ -86,5 +86,5 @@ interface glProgramBinary {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glProgramBinary.glProgramBinary
     */
-    fun glProgramBinary(program: UInt, binaryFormat: Int, binary: Long, length: UInt)
+    fun glProgramBinary(program: UInt, binaryFormat: Int, binary: java.nio.Buffer, length: UInt)
 }

@@ -153,5 +153,5 @@ interface glReadPixels {
     * @see de.dasbabypixel.gamelauncher.gles.es20.glReadPixels.glReadPixels
     * @see de.dasbabypixel.gamelauncher.gles.es32.glReadnPixels.glReadnPixels
     */
-    fun glReadPixels(x: Int, y: Int, width: UInt, height: UInt, format: Int, type: Int, data: Long)
+    fun glReadPixels(x: Int, y: Int, width: UInt, height: UInt, format: Int, type: Int, data: java.nio.Buffer)
 }

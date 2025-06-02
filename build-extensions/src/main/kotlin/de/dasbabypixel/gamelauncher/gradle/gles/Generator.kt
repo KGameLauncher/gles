@@ -38,6 +38,51 @@ class Generator(targetPath: Path, private val packageName: String) {
         if (requireDebugProc) {
             writeDebugProc()
         }
+        writePointerBuffer()
+    }
+
+    private fun writePointerBuffer() {
+        val path = basePath.resolve("PointerBuffer.kt");
+        path.parent.createDirectories()
+        path.bufferedWriter().use {
+            it.write("""
+                package $packageName
+                
+                interface PointerBuffer {
+                    val size: UInt
+                    val position: UInt
+                    val remaining: UInt
+                    
+                    fun get(): Long
+                    fun get(index: UInt): Long
+                    
+                    fun put(p: Long): PointerBuffer
+                    fun put(index: UInt, p: Long): PointerBuffer
+                    
+                    fun getByteBuffer(index: UInt, capacity: UInt): java.nio.ByteBuffer
+                    fun getShortBuffer(index: UInt, capacity: UInt): java.nio.ShortBuffer
+                    fun getIntBuffer(index: UInt, capacity: UInt): java.nio.IntBuffer
+                    fun getLongBuffer(index: UInt, capacity: UInt): java.nio.LongBuffer
+                    fun getFloatBuffer(index: UInt, capacity: UInt): java.nio.FloatBuffer
+                    fun getDoubleBuffer(index: UInt, capacity: UInt): java.nio.DoubleBuffer
+                    fun getPointerBuffer(index: UInt, capacity: UInt): PointerBuffer
+                    
+                    fun getByteBuffer(capacity: UInt): java.nio.ByteBuffer
+                    fun getShortBuffer(capacity: UInt): java.nio.ShortBuffer
+                    fun getIntBuffer(capacity: UInt): java.nio.IntBuffer
+                    fun getLongBuffer(capacity: UInt): java.nio.LongBuffer
+                    fun getFloatBuffer(capacity: UInt): java.nio.FloatBuffer
+                    fun getDoubleBuffer(capacity: UInt): java.nio.DoubleBuffer
+                    fun getPointerBuffer(capacity: UInt): PointerBuffer
+                    
+                    fun put(index: UInt, buffer: java.nio.Buffer): PointerBuffer
+                    fun put(index: UInt, buffer: PointerBuffer): PointerBuffer
+                    
+                    fun put(buffer: java.nio.Buffer)
+                    fun put(buffer: PointerBuffer)
+                }
+            """.trimIndent())
+        }
     }
 
     private fun writeDebugProc() {
@@ -61,7 +106,7 @@ class Generator(targetPath: Path, private val packageName: String) {
         val name = function.name
         val signature = function.signature(kotlin)
         val path = basePath.resolve(function.glVersion.versionName).resolve("$name.kt")
-        println("Write to $path")
+//        println("Write to $path")
         path.parent.createDirectories()
         path.bufferedWriter().use {
             it.write(
@@ -144,9 +189,9 @@ class Generator(targetPath: Path, private val packageName: String) {
                 pageMapByName[it.definition.name] = page
             }
         }
-        pageMapByName.keys.forEach {
-            println(it)
-        }
+//        pageMapByName.keys.forEach {
+//            println(it)
+//        }
         val futures = ArrayList<Future<Map<DocPage, DocPage>>>()
 
         Executors.newWorkStealingPool().use { service ->
@@ -208,7 +253,7 @@ class Generator(targetPath: Path, private val packageName: String) {
 
                             val localPageMap = HashMap<DocPage, DocPage>()
                             for (docPage in pages) {
-                                println("Convert ${docPage.name}")
+//                                println("Convert ${docPage.name}")
                                 val html = docPage.doc
                                 val markdown = page.executeJavaScriptFunction(
                                     turndownFunction, turndownService, arrayOf(html), null
@@ -268,9 +313,9 @@ class Generator(targetPath: Path, private val packageName: String) {
             }
         }
 
-        functions.forEach {
-            println(it.signature(kotlin))
-        }
+//        functions.forEach {
+//            println(it.signature(kotlin))
+//        }
 
         return ReadResult(functions, pages)
     }
@@ -372,6 +417,7 @@ class Generator(targetPath: Path, private val packageName: String) {
 
     fun mapCTypeToOurType(c: String, name: String): OurType {
         val short = if (c.startsWith("const ")) c.substring("const ".length) else c
+//        val short = c;
         if (short.endsWith("*")) return mapCPtrToOurType(short.substring(0, short.length - 1).trim(), name)
         val fixed = if (short == "void" || short == "DEBUGPROC" || short.startsWith("GL")) short else "GL$short"
         return when (fixed) {
@@ -393,8 +439,11 @@ class Generator(targetPath: Path, private val packageName: String) {
             if (baseTypeC == "void" || baseTypeC == "void *" || baseTypeC.startsWith("GL")) baseTypeC else "GL$baseTypeC"
         return when (fixed) {
             "GLchar", "GLubyte" -> OurType.String
-            "void" -> long
-            "void *" -> ByteBuffer
+            "void" -> Buffer
+            "void *" -> {
+                println(name + " bytebuffer")
+                ByteBuffer
+            }
             else -> run {
                 val kotlin = mapCTypeToOurType(baseTypeC, "$name[]")
                 return@run when (kotlin) {
@@ -422,7 +471,7 @@ class Generator(targetPath: Path, private val packageName: String) {
     data class OurDefinition(val name: String, val params: List<Pair<String, OurType>>, val returnType: OurType)
 
     enum class OurType {
-        void, float, int, uint, long, ulong, ubyte, boolean, DebugProc, String, ByteBuffer, IntBuffer, LongBuffer, StringArray, FloatBuffer
+        void, float, int, uint, long, ulong, ubyte, boolean, DebugProc, String, ByteBuffer, IntBuffer, LongBuffer, StringArray, FloatBuffer, Buffer, PointerBuffer
     }
 
     interface Serializer {
@@ -459,6 +508,8 @@ class Generator(targetPath: Path, private val packageName: String) {
                     LongBuffer -> "java.nio.LongBuffer"
                     StringArray -> "Array<String>"
                     FloatBuffer -> "java.nio.FloatBuffer"
+                    Buffer -> "java.nio.Buffer"
+                    PointerBuffer -> "${generator.packageName}.PointerBuffer"
                 }
             }
 

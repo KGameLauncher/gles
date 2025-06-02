@@ -296,5 +296,5 @@ interface glTexImage3D {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glTexImage3D.glTexImage3D
     */
-    fun glTexImage3D(target: Int, level: Int, internalFormat: Int, width: UInt, height: UInt, depth: UInt, border: Int, format: Int, type: Int, data: Long)
+    fun glTexImage3D(target: Int, level: Int, internalFormat: Int, width: UInt, height: UInt, depth: UInt, border: Int, format: Int, type: Int, data: java.nio.Buffer)
 }

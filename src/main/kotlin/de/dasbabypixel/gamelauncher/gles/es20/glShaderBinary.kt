@@ -86,5 +86,5 @@ interface glShaderBinary {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glShaderBinary.glShaderBinary
     */
-    fun glShaderBinary(count: UInt, shaders: java.nio.IntBuffer, binaryFormat: Int, binary: Long, length: UInt)
+    fun glShaderBinary(count: UInt, shaders: java.nio.IntBuffer, binaryFormat: Int, binary: java.nio.Buffer, length: UInt)
 }

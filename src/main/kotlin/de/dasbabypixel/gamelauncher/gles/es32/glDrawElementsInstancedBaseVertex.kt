@@ -82,5 +82,5 @@ interface glDrawElementsInstancedBaseVertex {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glDrawElementsInstancedBaseVertex.glDrawElementsInstancedBaseVertex
     */
-    fun glDrawElementsInstancedBaseVertex(mode: Int, count: UInt, type: Int, indices: Long, primcount: UInt, basevertex: Int)
+    fun glDrawElementsInstancedBaseVertex(mode: Int, count: UInt, type: Int, indices: java.nio.Buffer, primcount: UInt, basevertex: Int)
 }

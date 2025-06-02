@@ -94,5 +94,5 @@ interface glDrawElementsInstanced {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glDrawElementsInstanced.glDrawElementsInstanced
     */
-    fun glDrawElementsInstanced(mode: Int, count: UInt, type: Int, indices: Long, primcount: UInt)
+    fun glDrawElementsInstanced(mode: Int, count: UInt, type: Int, indices: java.nio.Buffer, primcount: UInt)
 }

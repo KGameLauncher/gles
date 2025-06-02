@@ -89,5 +89,5 @@ interface glDrawRangeElementsBaseVertex {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glDrawRangeElementsBaseVertex.glDrawRangeElementsBaseVertex
     */
-    fun glDrawRangeElementsBaseVertex(mode: Int, start: UInt, end: UInt, count: UInt, type: Int, indices: Long, basevertex: Int)
+    fun glDrawRangeElementsBaseVertex(mode: Int, start: UInt, end: UInt, count: UInt, type: Int, indices: java.nio.Buffer, basevertex: Int)
 }
