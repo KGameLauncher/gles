@@ -105,5 +105,5 @@ interface glGetStringi {
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetString.glGetString
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetStringi.glGetStringi
     */
-    fun glGetStringi(name: Int, index: UInt): String
+    fun glGetStringi(name: Int, index: UInt): String?
 }

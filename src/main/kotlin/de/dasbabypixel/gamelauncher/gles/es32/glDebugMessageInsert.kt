@@ -85,5 +85,5 @@ interface glDebugMessageInsert {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glDebugMessageInsert.glDebugMessageInsert
     */
-    fun glDebugMessageInsert(source: Int, type: Int, id: UInt, severity: Int, length: UInt, message: String)
+    fun glDebugMessageInsert(source: Int, type: Int, id: UInt, severity: Int, length: UInt, message: String?)
 }

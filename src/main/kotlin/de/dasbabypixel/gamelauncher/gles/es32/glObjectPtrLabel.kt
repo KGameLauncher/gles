@@ -70,5 +70,5 @@ interface glObjectPtrLabel {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glObjectPtrLabel.glObjectPtrLabel
     */
-    fun glObjectPtrLabel(ptr: de.dasbabypixel.gamelauncher.buffers.Buffer, length: UInt, label: String)
+    fun glObjectPtrLabel(ptr: de.dasbabypixel.gamelauncher.buffers.Buffer, length: UInt, label: String?)
 }

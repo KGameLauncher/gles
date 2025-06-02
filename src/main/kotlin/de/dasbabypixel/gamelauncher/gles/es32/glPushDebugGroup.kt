@@ -73,5 +73,5 @@ interface glPushDebugGroup {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glPushDebugGroup.glPushDebugGroup
     */
-    fun glPushDebugGroup(source: Int, id: UInt, length: UInt, message: String)
+    fun glPushDebugGroup(source: Int, id: UInt, length: UInt, message: String?)
 }

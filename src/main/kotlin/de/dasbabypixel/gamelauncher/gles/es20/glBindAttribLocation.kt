@@ -101,5 +101,5 @@ interface glBindAttribLocation {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glBindAttribLocation.glBindAttribLocation
     */
-    fun glBindAttribLocation(program: UInt, index: UInt, name: String)
+    fun glBindAttribLocation(program: UInt, index: UInt, name: String?)
 }

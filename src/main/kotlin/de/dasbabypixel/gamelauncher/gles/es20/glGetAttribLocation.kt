@@ -69,5 +69,5 @@ interface glGetAttribLocation {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetAttribLocation.glGetAttribLocation
     */
-    fun glGetAttribLocation(program: UInt, name: String): Int
+    fun glGetAttribLocation(program: UInt, name: String?): Int
 }

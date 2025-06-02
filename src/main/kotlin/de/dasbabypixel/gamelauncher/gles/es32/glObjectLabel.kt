@@ -77,5 +77,5 @@ interface glObjectLabel {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glObjectLabel.glObjectLabel
     */
-    fun glObjectLabel(identifier: Int, name: UInt, length: UInt, label: String)
+    fun glObjectLabel(identifier: Int, name: UInt, length: UInt, label: String?)
 }

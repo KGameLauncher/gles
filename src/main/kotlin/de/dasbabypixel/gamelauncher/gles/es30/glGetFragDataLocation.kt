@@ -61,5 +61,5 @@ interface glGetFragDataLocation {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetFragDataLocation.glGetFragDataLocation
     */
-    fun glGetFragDataLocation(program: UInt, name: String): Int
+    fun glGetFragDataLocation(program: UInt, name: String?): Int
 }

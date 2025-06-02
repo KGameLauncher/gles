@@ -78,5 +78,5 @@ interface glGetProgramResourceLocation {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetProgramResourceLocation.glGetProgramResourceLocation
     */
-    fun glGetProgramResourceLocation(program: UInt, programInterface: Int, name: String): Int
+    fun glGetProgramResourceLocation(program: UInt, programInterface: Int, name: String?): Int
 }

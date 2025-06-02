@@ -77,5 +77,5 @@ interface glGetUniformLocation {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetUniformLocation.glGetUniformLocation
     */
-    fun glGetUniformLocation(program: UInt, name: String): Int
+    fun glGetUniformLocation(program: UInt, name: String?): Int
 }

@@ -62,5 +62,5 @@ interface glGetUniformBlockIndex {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetUniformBlockIndex.glGetUniformBlockIndex
     */
-    fun glGetUniformBlockIndex(program: UInt, uniformBlockName: String): UInt
+    fun glGetUniformBlockIndex(program: UInt, uniformBlockName: String?): UInt
 }

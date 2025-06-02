@@ -521,7 +521,7 @@ class Generator(targetPath: Path, private val packageName: String) {
                         "DebugProc"
                     }
 
-                    OurType.String -> "String"
+                    OurType.String -> "String?"
                     ByteBuffer -> "de.dasbabypixel.gamelauncher.buffers.ByteBuffer"
                     IntBuffer -> "de.dasbabypixel.gamelauncher.buffers.IntBuffer"
                     LongBuffer -> "de.dasbabypixel.gamelauncher.buffers.LongBuffer"

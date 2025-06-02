@@ -97,5 +97,5 @@ interface glGetProgramResourceIndex {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetProgramResourceIndex.glGetProgramResourceIndex
     */
-    fun glGetProgramResourceIndex(program: UInt, programInterface: Int, name: String): UInt
+    fun glGetProgramResourceIndex(program: UInt, programInterface: Int, name: String?): UInt
 }
