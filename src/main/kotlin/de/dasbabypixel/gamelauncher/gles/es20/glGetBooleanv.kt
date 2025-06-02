@@ -1154,5 +1154,5 @@ interface glGetBooleanv {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetIntegeri_v.glGetIntegeri_v
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetInteger64i_v.glGetInteger64i_v
     */
-    fun glGetBooleanv(pname: Int, data: java.nio.IntBuffer)
+    fun glGetBooleanv(pname: Int, data: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

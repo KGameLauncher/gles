@@ -1154,5 +1154,5 @@ interface glGetIntegeri_v {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetIntegeri_v.glGetIntegeri_v
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetInteger64i_v.glGetInteger64i_v
     */
-    fun glGetIntegeri_v(target: Int, index: UInt, data: java.nio.IntBuffer)
+    fun glGetIntegeri_v(target: Int, index: UInt, data: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

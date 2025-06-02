@@ -88,5 +88,5 @@ interface glGetActiveUniformBlockiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetActiveUniformBlockiv.glGetActiveUniformBlockiv
     */
-    fun glGetActiveUniformBlockiv(program: UInt, uniformBlockIndex: UInt, pname: Int, params: java.nio.IntBuffer)
+    fun glGetActiveUniformBlockiv(program: UInt, uniformBlockIndex: UInt, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

@@ -114,5 +114,5 @@ interface glGetProgramResourceName {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetProgramResourceName.glGetProgramResourceName
     */
-    fun glGetProgramResourceName(program: UInt, programInterface: Int, index: UInt, bufSize: UInt, length: java.nio.IntBuffer, name: String)
+    fun glGetProgramResourceName(program: UInt, programInterface: Int, index: UInt, bufSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, name: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

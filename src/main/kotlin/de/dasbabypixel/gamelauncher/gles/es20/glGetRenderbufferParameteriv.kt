@@ -65,5 +65,5 @@ interface glGetRenderbufferParameteriv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetRenderbufferParameteriv.glGetRenderbufferParameteriv
     */
-    fun glGetRenderbufferParameteriv(target: Int, pname: Int, params: java.nio.IntBuffer)
+    fun glGetRenderbufferParameteriv(target: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

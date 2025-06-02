@@ -56,5 +56,5 @@ interface glDeleteTransformFeedbacks {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glDeleteTransformFeedbacks.glDeleteTransformFeedbacks
     */
-    fun glDeleteTransformFeedbacks(n: UInt, ids: java.nio.IntBuffer)
+    fun glDeleteTransformFeedbacks(n: UInt, ids: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

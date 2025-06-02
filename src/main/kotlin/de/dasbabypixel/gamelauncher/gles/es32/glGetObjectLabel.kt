@@ -84,5 +84,5 @@ interface glGetObjectLabel {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetObjectLabel.glGetObjectLabel
     */
-    fun glGetObjectLabel(identifier: Int, name: UInt, bifSize: UInt, length: java.nio.IntBuffer, label: String)
+    fun glGetObjectLabel(identifier: Int, name: UInt, bifSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, label: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

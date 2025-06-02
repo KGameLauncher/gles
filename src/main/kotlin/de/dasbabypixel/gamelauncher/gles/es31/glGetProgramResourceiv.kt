@@ -134,5 +134,5 @@ interface glGetProgramResourceiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetProgramResourceiv.glGetProgramResourceiv
     */
-    fun glGetProgramResourceiv(program: UInt, programInterface: Int, index: UInt, propCount: UInt, props: java.nio.IntBuffer, bufSize: UInt, length: java.nio.IntBuffer, params: java.nio.IntBuffer)
+    fun glGetProgramResourceiv(program: UInt, programInterface: Int, index: UInt, propCount: UInt, props: de.dasbabypixel.gamelauncher.buffers.IntBufferRO, bufSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

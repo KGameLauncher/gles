@@ -130,5 +130,5 @@ interface glGetBufferParameteri64v {
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetBufferParameteriv.glGetBufferParameteriv
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetBufferParameteri64v.glGetBufferParameteri64v
     */
-    fun glGetBufferParameteri64v(target: Int, value: Int, data: java.nio.LongBuffer)
+    fun glGetBufferParameteri64v(target: Int, value: Int, data: de.dasbabypixel.gamelauncher.buffers.LongBuffer)
 }

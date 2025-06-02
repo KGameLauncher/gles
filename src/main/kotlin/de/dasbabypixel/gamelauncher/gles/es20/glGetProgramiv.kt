@@ -191,5 +191,5 @@ interface glGetProgramiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetProgramiv.glGetProgramiv
     */
-    fun glGetProgramiv(program: UInt, pname: Int, params: java.nio.IntBuffer)
+    fun glGetProgramiv(program: UInt, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

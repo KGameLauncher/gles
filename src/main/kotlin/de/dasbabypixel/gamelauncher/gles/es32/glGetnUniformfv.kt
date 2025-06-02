@@ -129,5 +129,5 @@ interface glGetnUniformfv {
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetnUniformiv.glGetnUniformiv
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetnUniformuiv.glGetnUniformuiv
     */
-    fun glGetnUniformfv(program: UInt, location: Int, bufSize: UInt, params: java.nio.FloatBuffer)
+    fun glGetnUniformfv(program: UInt, location: Int, bufSize: UInt, params: de.dasbabypixel.gamelauncher.buffers.FloatBuffer)
 }

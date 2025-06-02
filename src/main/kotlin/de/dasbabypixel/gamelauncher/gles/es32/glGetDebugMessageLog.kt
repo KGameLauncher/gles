@@ -106,5 +106,5 @@ interface glGetDebugMessageLog {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetDebugMessageLog.glGetDebugMessageLog
     */
-    fun glGetDebugMessageLog(count: UInt, bufSize: UInt, sources: java.nio.IntBuffer, types: java.nio.IntBuffer, ids: java.nio.IntBuffer, severities: java.nio.IntBuffer, lengths: java.nio.IntBuffer, messageLog: String): UInt
+    fun glGetDebugMessageLog(count: UInt, bufSize: UInt, sources: de.dasbabypixel.gamelauncher.buffers.IntBuffer, types: de.dasbabypixel.gamelauncher.buffers.IntBuffer, ids: de.dasbabypixel.gamelauncher.buffers.IntBuffer, severities: de.dasbabypixel.gamelauncher.buffers.IntBuffer, lengths: de.dasbabypixel.gamelauncher.buffers.IntBuffer, messageLog: de.dasbabypixel.gamelauncher.buffers.ByteBuffer): UInt
 }

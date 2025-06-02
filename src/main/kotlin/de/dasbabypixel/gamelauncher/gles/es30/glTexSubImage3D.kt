@@ -139,5 +139,5 @@ interface glTexSubImage3D {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glTexSubImage3D.glTexSubImage3D
     */
-    fun glTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: UInt, height: UInt, depth: UInt, format: Int, type: Int, data: java.nio.Buffer)
+    fun glTexSubImage3D(target: Int, level: Int, xoffset: Int, yoffset: Int, zoffset: Int, width: UInt, height: UInt, depth: UInt, format: Int, type: Int, data: de.dasbabypixel.gamelauncher.buffers.BufferRO)
 }

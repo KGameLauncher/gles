@@ -99,5 +99,5 @@ interface glGetShaderiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetShaderiv.glGetShaderiv
     */
-    fun glGetShaderiv(shader: UInt, pname: Int, params: java.nio.IntBuffer)
+    fun glGetShaderiv(shader: UInt, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

@@ -139,5 +139,5 @@ interface glGetTexLevelParameterfv {
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetTexLevelParameterfv.glGetTexLevelParameterfv
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetTexLevelParameteriv.glGetTexLevelParameteriv
     */
-    fun glGetTexLevelParameterfv(target: Int, level: Int, pname: Int, params: java.nio.FloatBuffer)
+    fun glGetTexLevelParameterfv(target: Int, level: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.FloatBuffer)
 }

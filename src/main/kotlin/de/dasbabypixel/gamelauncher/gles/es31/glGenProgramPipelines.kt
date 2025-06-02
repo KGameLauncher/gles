@@ -58,5 +58,5 @@ interface glGenProgramPipelines {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGenProgramPipelines.glGenProgramPipelines
     */
-    fun glGenProgramPipelines(n: UInt, pipelines: java.nio.IntBuffer)
+    fun glGenProgramPipelines(n: UInt, pipelines: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

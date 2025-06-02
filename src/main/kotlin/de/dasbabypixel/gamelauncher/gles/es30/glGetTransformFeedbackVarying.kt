@@ -96,5 +96,5 @@ interface glGetTransformFeedbackVarying {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetTransformFeedbackVarying.glGetTransformFeedbackVarying
     */
-    fun glGetTransformFeedbackVarying(program: UInt, index: UInt, bufSize: UInt, length: java.nio.IntBuffer, size: java.nio.IntBuffer, type: java.nio.IntBuffer, name: String)
+    fun glGetTransformFeedbackVarying(program: UInt, index: UInt, bufSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, size: de.dasbabypixel.gamelauncher.buffers.IntBuffer, type: de.dasbabypixel.gamelauncher.buffers.IntBuffer, name: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

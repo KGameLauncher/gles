@@ -65,5 +65,5 @@ interface glGenQueries {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGenQueries.glGenQueries
     */
-    fun glGenQueries(n: UInt, ids: java.nio.IntBuffer)
+    fun glGenQueries(n: UInt, ids: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

@@ -416,44 +416,53 @@ class Generator(targetPath: Path, private val packageName: String) {
     )
 
     fun mapCTypeToOurType(c: String, name: String): OurType {
-        val short = if (c.startsWith("const ")) c.substring("const ".length) else c
-//        val short = c;
-        if (short.endsWith("*")) return mapCPtrToOurType(short.substring(0, short.length - 1).trim(), name)
-        val fixed = if (short == "void" || short == "DEBUGPROC" || short.startsWith("GL")) short else "GL$short"
-        return when (fixed) {
+        return when (c) {
             "void" -> void
+            "void *" -> Buffer
+            "void **" -> PointerBuffer
+            "const void *" -> BufferRO
+
+            "GLenum" -> int
+            "GLenum *" -> IntBuffer
+            "const GLenum *" -> IntBufferRO
+
+            "char *" -> ByteBuffer
+            "const char *" -> OurType.String
+            "const char **" -> StringArray
+
+            "GLchar *" -> ByteBuffer
+            "const GLchar *" -> OurType.String
+            "const GLchar **" -> StringArray
+
+            "const GLubyte*" -> OurType.String
+
+            "GLint" -> int
+            "GLint *" -> IntBuffer
+            "const GLint *" -> IntBufferRO
+
+            "GLintptr" -> long
+            "GLuint64" -> ulong
+            "GLint64 *" -> LongBuffer
+
+            "GLuint" -> uint
+            "GLuint *" -> IntBuffer
+            "const GLuint *" -> IntBufferRO
+
+            "GLsizei" -> uint
+            "GLsizei *" -> IntBuffer
+            "GLsizeiptr" -> ulong
+
             "GLfloat" -> float
-            "GLuint", "GLsizei" -> uint
-            "GLsync", "GLintptr", "GLint64" -> long
-            "GLuint64", "GLsizeiptr" -> ulong
-            "GLubyte" -> ubyte
-            "GLbitfield", "GLenum", "GLint" -> int
+            "GLfloat *" -> FloatBuffer
+            "const GLfloat *" -> FloatBufferRO
+
             "GLboolean" -> boolean
+            "GLboolean *" -> ByteBuffer
+
+            "GLbitfield" -> int
+            "GLsync" -> long
             "DEBUGPROC" -> DebugProc
             else -> error("Unknown type: $c for $name")
-        }
-    }
-
-    private fun mapCPtrToOurType(baseTypeC: String, name: String): OurType {
-        val fixed =
-            if (baseTypeC == "void" || baseTypeC == "void *" || baseTypeC.startsWith("GL")) baseTypeC else "GL$baseTypeC"
-        return when (fixed) {
-            "GLchar", "GLubyte" -> OurType.String
-            "void" -> Buffer
-            "void *" -> {
-                println(name + " bytebuffer")
-                ByteBuffer
-            }
-            else -> run {
-                val kotlin = mapCTypeToOurType(baseTypeC, "$name[]")
-                return@run when (kotlin) {
-                    int, uint, boolean -> IntBuffer
-                    float -> FloatBuffer
-                    long -> LongBuffer
-                    OurType.String -> StringArray
-                    else -> error("Unsupported C to ptr: $baseTypeC for $name[]")
-                }
-            }
         }
     }
 
@@ -471,7 +480,17 @@ class Generator(targetPath: Path, private val packageName: String) {
     data class OurDefinition(val name: String, val params: List<Pair<String, OurType>>, val returnType: OurType)
 
     enum class OurType {
-        void, float, int, uint, long, ulong, ubyte, boolean, DebugProc, String, ByteBuffer, IntBuffer, LongBuffer, StringArray, FloatBuffer, Buffer, PointerBuffer
+        void, float, int, uint, long, ulong, ubyte, boolean, DebugProc, String,
+        ByteBuffer,
+        IntBuffer,
+        IntBufferRO,
+        LongBuffer,
+        StringArray,
+        FloatBuffer,
+        FloatBufferRO,
+        Buffer,
+        BufferRO,
+        PointerBuffer
     }
 
     interface Serializer {
@@ -503,13 +522,16 @@ class Generator(targetPath: Path, private val packageName: String) {
                     }
 
                     OurType.String -> "String"
-                    ByteBuffer -> "java.nio.ByteBuffer"
-                    IntBuffer -> "java.nio.IntBuffer"
-                    LongBuffer -> "java.nio.LongBuffer"
+                    ByteBuffer -> "de.dasbabypixel.gamelauncher.buffers.ByteBuffer"
+                    IntBuffer -> "de.dasbabypixel.gamelauncher.buffers.IntBuffer"
+                    LongBuffer -> "de.dasbabypixel.gamelauncher.buffers.LongBuffer"
                     StringArray -> "Array<String>"
-                    FloatBuffer -> "java.nio.FloatBuffer"
-                    Buffer -> "java.nio.Buffer"
+                    FloatBuffer -> "de.dasbabypixel.gamelauncher.buffers.FloatBuffer"
+                    Buffer -> "de.dasbabypixel.gamelauncher.buffers.Buffer"
                     PointerBuffer -> "${generator.packageName}.PointerBuffer"
+                    IntBufferRO -> "de.dasbabypixel.gamelauncher.buffers.IntBufferRO"
+                    FloatBufferRO -> "de.dasbabypixel.gamelauncher.buffers.FloatBufferRO"
+                    BufferRO -> "de.dasbabypixel.gamelauncher.buffers.BufferRO"
                 }
             }
 

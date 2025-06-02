@@ -86,5 +86,5 @@ interface glGetProgramInfoLog {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetProgramInfoLog.glGetProgramInfoLog
     */
-    fun glGetProgramInfoLog(program: UInt, maxLength: UInt, length: java.nio.IntBuffer, infoLog: String)
+    fun glGetProgramInfoLog(program: UInt, maxLength: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, infoLog: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

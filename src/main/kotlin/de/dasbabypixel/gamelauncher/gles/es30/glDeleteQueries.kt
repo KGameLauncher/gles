@@ -63,5 +63,5 @@ interface glDeleteQueries {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glDeleteQueries.glDeleteQueries
     */
-    fun glDeleteQueries(n: UInt, ids: java.nio.IntBuffer)
+    fun glDeleteQueries(n: UInt, ids: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

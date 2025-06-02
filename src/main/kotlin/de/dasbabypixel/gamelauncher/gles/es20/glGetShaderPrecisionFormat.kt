@@ -65,5 +65,5 @@ interface glGetShaderPrecisionFormat {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetShaderPrecisionFormat.glGetShaderPrecisionFormat
     */
-    fun glGetShaderPrecisionFormat(shaderType: Int, precisionType: Int, range: java.nio.IntBuffer, precision: java.nio.IntBuffer)
+    fun glGetShaderPrecisionFormat(shaderType: Int, precisionType: Int, range: de.dasbabypixel.gamelauncher.buffers.IntBuffer, precision: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

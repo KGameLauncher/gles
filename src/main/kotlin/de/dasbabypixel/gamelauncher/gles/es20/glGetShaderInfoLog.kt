@@ -86,5 +86,5 @@ interface glGetShaderInfoLog {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetShaderInfoLog.glGetShaderInfoLog
     */
-    fun glGetShaderInfoLog(shader: UInt, maxLength: UInt, length: java.nio.IntBuffer, infoLog: String)
+    fun glGetShaderInfoLog(shader: UInt, maxLength: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, infoLog: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

@@ -63,5 +63,5 @@ interface glDeleteTextures {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glDeleteTextures.glDeleteTextures
     */
-    fun glDeleteTextures(n: UInt, textures: java.nio.IntBuffer)
+    fun glDeleteTextures(n: UInt, textures: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

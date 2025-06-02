@@ -80,5 +80,5 @@ interface glGetProgramBinary {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetProgramBinary.glGetProgramBinary
     */
-    fun glGetProgramBinary(program: UInt, bufsize: UInt, length: java.nio.IntBuffer, binaryFormat: java.nio.IntBuffer, binary: java.nio.Buffer)
+    fun glGetProgramBinary(program: UInt, bufsize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, binaryFormat: de.dasbabypixel.gamelauncher.buffers.IntBuffer, binary: de.dasbabypixel.gamelauncher.buffers.Buffer)
 }

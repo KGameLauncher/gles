@@ -65,5 +65,5 @@ interface glGenFramebuffers {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGenFramebuffers.glGenFramebuffers
     */
-    fun glGenFramebuffers(n: UInt, framebuffers: java.nio.IntBuffer)
+    fun glGenFramebuffers(n: UInt, framebuffers: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

@@ -178,5 +178,5 @@ interface glGetActiveUniformsiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetActiveUniformsiv.glGetActiveUniformsiv
     */
-    fun glGetActiveUniformsiv(program: UInt, uniformCount: UInt, uniformIndices: java.nio.IntBuffer, pname: Int, params: java.nio.IntBuffer)
+    fun glGetActiveUniformsiv(program: UInt, uniformCount: UInt, uniformIndices: de.dasbabypixel.gamelauncher.buffers.IntBufferRO, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

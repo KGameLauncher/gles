@@ -110,5 +110,5 @@ interface glDrawRangeElements {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glDrawRangeElements.glDrawRangeElements
     */
-    fun glDrawRangeElements(mode: Int, start: UInt, end: UInt, count: UInt, type: Int, indices: java.nio.Buffer)
+    fun glDrawRangeElements(mode: Int, start: UInt, end: UInt, count: UInt, type: Int, indices: de.dasbabypixel.gamelauncher.buffers.BufferRO)
 }

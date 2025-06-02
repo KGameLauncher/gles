@@ -358,5 +358,5 @@ interface glUniform2uiv {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glUniformMatrix3x4fv.glUniformMatrix3x4fv
     * @see de.dasbabypixel.gamelauncher.gles.es30.glUniformMatrix4x3fv.glUniformMatrix4x3fv
     */
-    fun glUniform2uiv(location: Int, count: UInt, value: java.nio.IntBuffer)
+    fun glUniform2uiv(location: Int, count: UInt, value: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

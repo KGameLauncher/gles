@@ -74,5 +74,5 @@ interface glGetUniformIndices {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetUniformIndices.glGetUniformIndices
     */
-    fun glGetUniformIndices(program: UInt, uniformCount: UInt, uniformNames: Array<String>, uniformIndices: java.nio.IntBuffer)
+    fun glGetUniformIndices(program: UInt, uniformCount: UInt, uniformNames: Array<String>, uniformIndices: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

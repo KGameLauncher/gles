@@ -79,5 +79,5 @@ interface glGetAttachedShaders {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetAttachedShaders.glGetAttachedShaders
     */
-    fun glGetAttachedShaders(program: UInt, maxCount: UInt, count: java.nio.IntBuffer, shaders: java.nio.IntBuffer)
+    fun glGetAttachedShaders(program: UInt, maxCount: UInt, count: de.dasbabypixel.gamelauncher.buffers.IntBuffer, shaders: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

@@ -64,5 +64,5 @@ interface glGetPointerv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetPointerv.glGetPointerv
     */
-    fun glGetPointerv(pname: Int, params: java.nio.ByteBuffer)
+    fun glGetPointerv(pname: Int, params: de.dasbabypixel.gamelauncher.gles.PointerBuffer)
 }

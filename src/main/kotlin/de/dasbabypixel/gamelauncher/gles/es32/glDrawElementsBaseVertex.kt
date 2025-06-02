@@ -77,5 +77,5 @@ interface glDrawElementsBaseVertex {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glDrawElementsBaseVertex.glDrawElementsBaseVertex
     */
-    fun glDrawElementsBaseVertex(mode: Int, count: UInt, type: Int, indices: java.nio.Buffer, basevertex: Int)
+    fun glDrawElementsBaseVertex(mode: Int, count: UInt, type: Int, indices: de.dasbabypixel.gamelauncher.buffers.Buffer, basevertex: Int)
 }

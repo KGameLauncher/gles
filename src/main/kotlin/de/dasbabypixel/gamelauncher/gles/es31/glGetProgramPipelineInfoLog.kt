@@ -73,5 +73,5 @@ interface glGetProgramPipelineInfoLog {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetProgramPipelineInfoLog.glGetProgramPipelineInfoLog
     */
-    fun glGetProgramPipelineInfoLog(pipeline: UInt, bufSize: UInt, length: java.nio.IntBuffer, infoLog: String)
+    fun glGetProgramPipelineInfoLog(pipeline: UInt, bufSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, infoLog: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

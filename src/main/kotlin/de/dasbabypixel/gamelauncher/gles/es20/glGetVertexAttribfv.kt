@@ -140,5 +140,5 @@ interface glGetVertexAttribfv {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetVertexAttribIiv.glGetVertexAttribIiv
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetVertexAttribIuiv.glGetVertexAttribIuiv
     */
-    fun glGetVertexAttribfv(index: UInt, pname: Int, params: java.nio.FloatBuffer)
+    fun glGetVertexAttribfv(index: UInt, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.FloatBuffer)
 }

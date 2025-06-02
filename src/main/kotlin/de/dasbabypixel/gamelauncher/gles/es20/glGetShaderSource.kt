@@ -79,5 +79,5 @@ interface glGetShaderSource {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetShaderSource.glGetShaderSource
     */
-    fun glGetShaderSource(shader: UInt, bufSize: UInt, length: java.nio.IntBuffer, source: String)
+    fun glGetShaderSource(shader: UInt, bufSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, source: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

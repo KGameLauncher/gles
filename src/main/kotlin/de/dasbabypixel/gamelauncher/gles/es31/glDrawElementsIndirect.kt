@@ -107,5 +107,5 @@ interface glDrawElementsIndirect {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glDrawElementsIndirect.glDrawElementsIndirect
     */
-    fun glDrawElementsIndirect(mode: Int, type: Int, indirect: java.nio.Buffer)
+    fun glDrawElementsIndirect(mode: Int, type: Int, indirect: de.dasbabypixel.gamelauncher.buffers.BufferRO)
 }

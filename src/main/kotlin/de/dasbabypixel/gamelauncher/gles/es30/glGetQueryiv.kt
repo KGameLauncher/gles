@@ -68,5 +68,5 @@ interface glGetQueryiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetQueryiv.glGetQueryiv
     */
-    fun glGetQueryiv(target: Int, pname: Int, params: java.nio.IntBuffer)
+    fun glGetQueryiv(target: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

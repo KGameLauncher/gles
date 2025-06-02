@@ -81,5 +81,5 @@ interface glGetProgramPipelineiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetProgramPipelineiv.glGetProgramPipelineiv
     */
-    fun glGetProgramPipelineiv(pipeline: UInt, pname: Int, params: java.nio.IntBuffer)
+    fun glGetProgramPipelineiv(pipeline: UInt, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

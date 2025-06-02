@@ -94,5 +94,5 @@ interface glGetInternalformativ {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetInternalformativ.glGetInternalformativ
     */
-    fun glGetInternalformativ(target: Int, internalformat: Int, pname: Int, bufSize: UInt, params: java.nio.IntBuffer)
+    fun glGetInternalformativ(target: Int, internalformat: Int, pname: Int, bufSize: UInt, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

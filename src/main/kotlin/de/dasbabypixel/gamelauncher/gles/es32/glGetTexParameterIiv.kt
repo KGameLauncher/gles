@@ -167,5 +167,5 @@ interface glGetTexParameterIiv {
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetTexParameterIiv.glGetTexParameterIiv
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetTexParameterIuiv.glGetTexParameterIuiv
     */
-    fun glGetTexParameterIiv(target: Int, pname: Int, params: java.nio.IntBuffer)
+    fun glGetTexParameterIiv(target: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

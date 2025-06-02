@@ -266,5 +266,5 @@ interface glTexParameteriv {
     * @see de.dasbabypixel.gamelauncher.gles.es32.glTexParameterIiv.glTexParameterIiv
     * @see de.dasbabypixel.gamelauncher.gles.es32.glTexParameterIuiv.glTexParameterIuiv
     */
-    fun glTexParameteriv(target: Int, pname: Int, params: java.nio.IntBuffer)
+    fun glTexParameteriv(target: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

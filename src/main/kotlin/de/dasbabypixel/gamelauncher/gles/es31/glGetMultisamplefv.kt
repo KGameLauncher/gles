@@ -65,5 +65,5 @@ interface glGetMultisamplefv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetMultisamplefv.glGetMultisamplefv
     */
-    fun glGetMultisamplefv(pname: Int, index: UInt, `val`: java.nio.FloatBuffer)
+    fun glGetMultisamplefv(pname: Int, index: UInt, `val`: de.dasbabypixel.gamelauncher.buffers.FloatBuffer)
 }

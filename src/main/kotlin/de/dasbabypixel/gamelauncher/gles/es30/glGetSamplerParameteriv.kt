@@ -129,5 +129,5 @@ interface glGetSamplerParameteriv {
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetSamplerParameterIiv.glGetSamplerParameterIiv
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetSamplerParameterIuiv.glGetSamplerParameterIuiv
     */
-    fun glGetSamplerParameteriv(sampler: UInt, pname: Int, params: java.nio.IntBuffer)
+    fun glGetSamplerParameteriv(sampler: UInt, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

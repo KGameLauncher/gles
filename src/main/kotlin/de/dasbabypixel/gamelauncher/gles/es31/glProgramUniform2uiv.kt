@@ -393,5 +393,5 @@ interface glProgramUniform2uiv {
     * @see de.dasbabypixel.gamelauncher.gles.es31.glProgramUniformMatrix3x4fv.glProgramUniformMatrix3x4fv
     * @see de.dasbabypixel.gamelauncher.gles.es31.glProgramUniformMatrix4x3fv.glProgramUniformMatrix4x3fv
     */
-    fun glProgramUniform2uiv(program: UInt, location: Int, count: UInt, value: java.nio.IntBuffer)
+    fun glProgramUniform2uiv(program: UInt, location: Int, count: UInt, value: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

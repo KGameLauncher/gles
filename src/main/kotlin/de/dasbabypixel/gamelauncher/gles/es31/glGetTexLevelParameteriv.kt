@@ -139,5 +139,5 @@ interface glGetTexLevelParameteriv {
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetTexLevelParameterfv.glGetTexLevelParameterfv
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetTexLevelParameteriv.glGetTexLevelParameteriv
     */
-    fun glGetTexLevelParameteriv(target: Int, level: Int, pname: Int, params: java.nio.IntBuffer)
+    fun glGetTexLevelParameteriv(target: Int, level: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

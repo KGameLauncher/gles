@@ -1,8 +1,6 @@
 import de.dasbabypixel.gamelauncher.gradle.gles.GenerateGLES
 import org.jreleaser.model.Active
 import org.jreleaser.model.Signing.Mode
-import org.jreleaser.model.api.deploy.maven.MavenCentralMavenDeployer
-import org.jreleaser.model.api.signing.Signing
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
@@ -13,6 +11,10 @@ plugins {
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    api(libs.buffers)
 }
 
 jreleaser {
@@ -73,7 +75,7 @@ publishing {
                 scm {
                     connection.set("scm:git:git://github.com/KGameLauncher/gles.git")
                     developerConnection.set("scm:git:ssh://github.com/KGameLauncher/gles.git")
-                    url.set("https://github.com/KGameLauncher/gless")
+                    url.set("https://github.com/KGameLauncher/gles")
                 }
             }
         }

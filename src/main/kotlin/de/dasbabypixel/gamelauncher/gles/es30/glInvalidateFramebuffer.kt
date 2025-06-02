@@ -72,5 +72,5 @@ interface glInvalidateFramebuffer {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glInvalidateFramebuffer.glInvalidateFramebuffer
     */
-    fun glInvalidateFramebuffer(target: Int, numAttachments: UInt, attachments: java.nio.IntBuffer)
+    fun glInvalidateFramebuffer(target: Int, numAttachments: UInt, attachments: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

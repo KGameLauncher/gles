@@ -56,5 +56,5 @@ interface glDeleteProgramPipelines {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glDeleteProgramPipelines.glDeleteProgramPipelines
     */
-    fun glDeleteProgramPipelines(n: UInt, pipelines: java.nio.IntBuffer)
+    fun glDeleteProgramPipelines(n: UInt, pipelines: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

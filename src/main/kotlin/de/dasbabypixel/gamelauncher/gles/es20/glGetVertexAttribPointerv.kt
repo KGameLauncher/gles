@@ -77,5 +77,5 @@ interface glGetVertexAttribPointerv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetVertexAttribPointerv.glGetVertexAttribPointerv
     */
-    fun glGetVertexAttribPointerv(index: UInt, pname: Int, pointer: java.nio.ByteBuffer)
+    fun glGetVertexAttribPointerv(index: UInt, pname: Int, pointer: de.dasbabypixel.gamelauncher.gles.PointerBuffer)
 }

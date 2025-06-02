@@ -89,5 +89,5 @@ interface glGetFramebufferParameteriv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetFramebufferParameteriv.glGetFramebufferParameteriv
     */
-    fun glGetFramebufferParameteriv(target: Int, pname: Int, params: java.nio.IntBuffer)
+    fun glGetFramebufferParameteriv(target: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

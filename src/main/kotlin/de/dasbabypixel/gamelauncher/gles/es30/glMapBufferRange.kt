@@ -143,5 +143,5 @@ interface glMapBufferRange {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glMapBufferRange.glMapBufferRange
     * @see de.dasbabypixel.gamelauncher.gles.es30.glUnmapBuffer.glUnmapBuffer
     */
-    fun glMapBufferRange(target: Int, offset: Long, length: ULong, access: Int): java.nio.Buffer
+    fun glMapBufferRange(target: Int, offset: Long, length: ULong, access: Int): de.dasbabypixel.gamelauncher.buffers.Buffer
 }

@@ -129,5 +129,5 @@ interface glTexSubImage2D {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glTexSubImage2D.glTexSubImage2D
     */
-    fun glTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: UInt, height: UInt, format: Int, type: Int, data: java.nio.Buffer)
+    fun glTexSubImage2D(target: Int, level: Int, xoffset: Int, yoffset: Int, width: UInt, height: UInt, format: Int, type: Int, data: de.dasbabypixel.gamelauncher.buffers.BufferRO)
 }

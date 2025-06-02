@@ -65,5 +65,5 @@ interface glGenVertexArrays {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGenVertexArrays.glGenVertexArrays
     */
-    fun glGenVertexArrays(n: UInt, arrays: java.nio.IntBuffer)
+    fun glGenVertexArrays(n: UInt, arrays: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

@@ -91,5 +91,5 @@ interface glGetSynciv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetSynciv.glGetSynciv
     */
-    fun glGetSynciv(sync: Long, pname: Int, bufSize: UInt, length: java.nio.IntBuffer, values: java.nio.IntBuffer)
+    fun glGetSynciv(sync: Long, pname: Int, bufSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, values: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

@@ -109,5 +109,5 @@ interface glClearBufferiv {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glClearBufferfv.glClearBufferfv
     * @see de.dasbabypixel.gamelauncher.gles.es30.glClearBufferfi.glClearBufferfi
     */
-    fun glClearBufferiv(buffer: Int, drawBuffer: Int, value: java.nio.IntBuffer)
+    fun glClearBufferiv(buffer: Int, drawBuffer: Int, value: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

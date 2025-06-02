@@ -62,5 +62,5 @@ interface glGenTransformFeedbacks {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGenTransformFeedbacks.glGenTransformFeedbacks
     */
-    fun glGenTransformFeedbacks(n: UInt, ids: java.nio.IntBuffer)
+    fun glGenTransformFeedbacks(n: UInt, ids: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

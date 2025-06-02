@@ -129,5 +129,5 @@ interface glGetUniformiv {
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetnUniformiv.glGetnUniformiv
     * @see de.dasbabypixel.gamelauncher.gles.es32.glGetnUniformuiv.glGetnUniformuiv
     */
-    fun glGetUniformiv(program: UInt, location: Int, params: java.nio.IntBuffer)
+    fun glGetUniformiv(program: UInt, location: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

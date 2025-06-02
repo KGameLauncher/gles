@@ -83,5 +83,5 @@ interface glGetActiveUniformBlockName {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetActiveUniformBlockName.glGetActiveUniformBlockName
     */
-    fun glGetActiveUniformBlockName(program: UInt, uniformBlockIndex: UInt, bufSize: UInt, length: java.nio.IntBuffer, uniformBlockName: String)
+    fun glGetActiveUniformBlockName(program: UInt, uniformBlockIndex: UInt, bufSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, uniformBlockName: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

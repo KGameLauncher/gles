@@ -61,5 +61,5 @@ interface glDeleteSamplers {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glDeleteSamplers.glDeleteSamplers
     */
-    fun glDeleteSamplers(n: UInt, samplers: java.nio.IntBuffer)
+    fun glDeleteSamplers(n: UInt, samplers: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

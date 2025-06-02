@@ -176,5 +176,5 @@ interface glVertexAttrib4fv {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glVertexAttribI4iv.glVertexAttribI4iv
     * @see de.dasbabypixel.gamelauncher.gles.es30.glVertexAttribI4uiv.glVertexAttribI4uiv
     */
-    fun glVertexAttrib4fv(index: UInt, v: java.nio.FloatBuffer)
+    fun glVertexAttrib4fv(index: UInt, v: de.dasbabypixel.gamelauncher.buffers.FloatBufferRO)
 }

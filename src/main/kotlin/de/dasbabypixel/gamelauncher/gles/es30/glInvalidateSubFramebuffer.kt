@@ -92,5 +92,5 @@ interface glInvalidateSubFramebuffer {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glInvalidateSubFramebuffer.glInvalidateSubFramebuffer
     */
-    fun glInvalidateSubFramebuffer(target: Int, numAttachments: UInt, attachments: java.nio.IntBuffer, x: Int, y: Int, width: UInt, height: UInt)
+    fun glInvalidateSubFramebuffer(target: Int, numAttachments: UInt, attachments: de.dasbabypixel.gamelauncher.buffers.IntBufferRO, x: Int, y: Int, width: UInt, height: UInt)
 }

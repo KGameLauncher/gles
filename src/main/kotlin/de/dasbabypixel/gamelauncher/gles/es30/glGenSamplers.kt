@@ -65,5 +65,5 @@ interface glGenSamplers {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGenSamplers.glGenSamplers
     */
-    fun glGenSamplers(n: UInt, samplers: java.nio.IntBuffer)
+    fun glGenSamplers(n: UInt, samplers: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

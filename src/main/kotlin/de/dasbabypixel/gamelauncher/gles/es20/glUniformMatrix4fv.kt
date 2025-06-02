@@ -358,5 +358,5 @@ interface glUniformMatrix4fv {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glUniformMatrix3x4fv.glUniformMatrix3x4fv
     * @see de.dasbabypixel.gamelauncher.gles.es30.glUniformMatrix4x3fv.glUniformMatrix4x3fv
     */
-    fun glUniformMatrix4fv(location: Int, count: UInt, transpose: Boolean, value: java.nio.FloatBuffer)
+    fun glUniformMatrix4fv(location: Int, count: UInt, transpose: Boolean, value: de.dasbabypixel.gamelauncher.buffers.FloatBufferRO)
 }

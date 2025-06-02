@@ -86,5 +86,5 @@ interface glGetQueryObjectuiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetQueryObjectuiv.glGetQueryObjectuiv
     */
-    fun glGetQueryObjectuiv(id: UInt, pname: Int, params: java.nio.IntBuffer)
+    fun glGetQueryObjectuiv(id: UInt, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

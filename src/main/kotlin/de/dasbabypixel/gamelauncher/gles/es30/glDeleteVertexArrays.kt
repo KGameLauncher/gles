@@ -58,5 +58,5 @@ interface glDeleteVertexArrays {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glDeleteVertexArrays.glDeleteVertexArrays
     */
-    fun glDeleteVertexArrays(n: UInt, arrays: java.nio.IntBuffer)
+    fun glDeleteVertexArrays(n: UInt, arrays: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

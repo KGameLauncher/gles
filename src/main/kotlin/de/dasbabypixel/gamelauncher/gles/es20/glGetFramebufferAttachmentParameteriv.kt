@@ -113,5 +113,5 @@ interface glGetFramebufferAttachmentParameteriv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetFramebufferAttachmentParameteriv.glGetFramebufferAttachmentParameteriv
     */
-    fun glGetFramebufferAttachmentParameteriv(target: Int, attachment: Int, pname: Int, params: java.nio.IntBuffer)
+    fun glGetFramebufferAttachmentParameteriv(target: Int, attachment: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

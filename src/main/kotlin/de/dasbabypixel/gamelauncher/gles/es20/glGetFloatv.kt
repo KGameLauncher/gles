@@ -1154,5 +1154,5 @@ interface glGetFloatv {
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetIntegeri_v.glGetIntegeri_v
     * @see de.dasbabypixel.gamelauncher.gles.es30.glGetInteger64i_v.glGetInteger64i_v
     */
-    fun glGetFloatv(pname: Int, data: java.nio.FloatBuffer)
+    fun glGetFloatv(pname: Int, data: de.dasbabypixel.gamelauncher.buffers.FloatBuffer)
 }

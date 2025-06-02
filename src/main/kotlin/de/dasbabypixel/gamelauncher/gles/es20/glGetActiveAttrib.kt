@@ -106,5 +106,5 @@ interface glGetActiveAttrib {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGetActiveAttrib.glGetActiveAttrib
     */
-    fun glGetActiveAttrib(program: UInt, index: UInt, bufSize: UInt, length: java.nio.IntBuffer, size: java.nio.IntBuffer, type: java.nio.IntBuffer, name: String)
+    fun glGetActiveAttrib(program: UInt, index: UInt, bufSize: UInt, length: de.dasbabypixel.gamelauncher.buffers.IntBuffer, size: de.dasbabypixel.gamelauncher.buffers.IntBuffer, type: de.dasbabypixel.gamelauncher.buffers.IntBuffer, name: de.dasbabypixel.gamelauncher.buffers.ByteBuffer)
 }

@@ -65,5 +65,5 @@ interface glGenRenderbuffers {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGenRenderbuffers.glGenRenderbuffers
     */
-    fun glGenRenderbuffers(n: UInt, renderbuffers: java.nio.IntBuffer)
+    fun glGenRenderbuffers(n: UInt, renderbuffers: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

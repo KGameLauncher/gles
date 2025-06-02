@@ -65,5 +65,5 @@ interface glGenTextures {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glGenTextures.glGenTextures
     */
-    fun glGenTextures(n: UInt, textures: java.nio.IntBuffer)
+    fun glGenTextures(n: UInt, textures: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

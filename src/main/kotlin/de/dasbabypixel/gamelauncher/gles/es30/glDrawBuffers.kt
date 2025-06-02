@@ -90,5 +90,5 @@ interface glDrawBuffers {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es30.glDrawBuffers.glDrawBuffers
     */
-    fun glDrawBuffers(n: UInt, bufs: java.nio.IntBuffer)
+    fun glDrawBuffers(n: UInt, bufs: de.dasbabypixel.gamelauncher.buffers.IntBufferRO)
 }

@@ -97,5 +97,5 @@ interface glDebugMessageControl {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es32.glDebugMessageControl.glDebugMessageControl
     */
-    fun glDebugMessageControl(source: Int, type: Int, severity: Int, count: UInt, ids: java.nio.IntBuffer, enabled: Boolean)
+    fun glDebugMessageControl(source: Int, type: Int, severity: Int, count: UInt, ids: de.dasbabypixel.gamelauncher.buffers.IntBufferRO, enabled: Boolean)
 }

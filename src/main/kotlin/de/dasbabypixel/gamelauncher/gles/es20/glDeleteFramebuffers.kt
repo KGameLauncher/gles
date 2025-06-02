@@ -56,5 +56,5 @@ interface glDeleteFramebuffers {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es20.glDeleteFramebuffers.glDeleteFramebuffers
     */
-    fun glDeleteFramebuffers(n: UInt, framebuffers: java.nio.IntBuffer)
+    fun glDeleteFramebuffers(n: UInt, framebuffers: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }

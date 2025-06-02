@@ -123,5 +123,5 @@ interface glGetProgramInterfaceiv {
     * 
     * @see de.dasbabypixel.gamelauncher.gles.es31.glGetProgramInterfaceiv.glGetProgramInterfaceiv
     */
-    fun glGetProgramInterfaceiv(program: UInt, programInterface: Int, pname: Int, params: java.nio.IntBuffer)
+    fun glGetProgramInterfaceiv(program: UInt, programInterface: Int, pname: Int, params: de.dasbabypixel.gamelauncher.buffers.IntBuffer)
 }
