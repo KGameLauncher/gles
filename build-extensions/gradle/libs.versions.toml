@@ -1,5 +1,5 @@
 [versions]
-htmlunit = "4.11.1"
+htmlunit = "4.13.0"
 jsoup = "1.20.1"
 
 [libraries]
