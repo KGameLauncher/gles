@@ -6,7 +6,7 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     id("gles")
     `maven-publish`
-    id("org.jreleaser") version "1.18.0"
+    id("org.jreleaser") version "1.26.0"
 }
 
 repositories {
